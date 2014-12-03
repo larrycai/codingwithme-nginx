@@ -1,28 +1,19 @@
 ## Introduction ##
 
-this is local development environment for ansible 
+this is local development environment for nginx 
 
-Inside boot2docker, use fig to start the env. ansible + ubuntu base
-
-    $ fig -f fig-ansible.yml run ansible bash
-
-or using shell script
+Inside boot2docker, use shell script
 
     $ ./start.sh
 
-Inside ansible
-    
-    $ ./update.sh # update hosts/id_rsa for permssion
-    $ ansible all -m setup 
- 
-Exercise
+You will need to access `nginx` container by
 
-    $ cd exercise
-    $ ansible-playbook proxy.yml -e "http_proxy=http://<proxy>"
-    $ ansible-playbook exer3.yml
-    $ ansible-playbook exer4.yml
-    $ ansible-playbook exer5.yml
+    $ docker exec -it nginx bash
+
+Will be nice to open another shell to track logs
+
+    $ docker logs -f nginx	
     
 ## Reference ##
 
-* slides: http://www.slideshare.net/larrycai/learn-basic-ansible-using-docker    
+* slides: http://www.slideshare.net/larrycai/learn-nginx-in90mins  
