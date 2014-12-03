@@ -19,6 +19,7 @@ RUN curl -s http://nginx.org/download/nginx-1.6.2.tar.gz | tar -xz -C /tmp \
 RUN apt-get -y install apache2-utils
 
 ADD nginx.conf /usr/local/nginx/conf/nginx.conf
+ADD data /nginx
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
