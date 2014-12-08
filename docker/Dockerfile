@@ -22,6 +22,7 @@ ADD nginx.conf /usr/local/nginx/conf/nginx.conf
 ADD data /nginx
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
+ENV PATH /usr/local/nginx/sbin:$PATH
 
 VOLUME ['/nginx']
 
